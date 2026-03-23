@@ -1,0 +1,1147 @@
+:root {
+    --color-1: silver;
+    --color-2:#aa5c61;
+    --font-1:"Gwendolyn", cursive;;
+    --font-2:  "Arapey", serif;
+    --scroll-animation-duration: 0.5s;
+}
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color:transparent;
+    font-family: "Arapey", serif;
+    font-style: italic;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* evita desplazamiento horizontal */
+    width: 100%;
+  }
+  
+#envelope {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+    z-index: 10;
+}
+#envelope:hover {
+    transform: scale(1.05);
+}
+/* Parte superior del sobre (solapa) */
+#envelope-top {
+    top: 0;
+    border-bottom: none;
+}
+/* Parte inferior del sobre (cuerpo) */
+#envelope-bottom {
+    bottom: 0;
+    border-top: none;
+}
+#envelope-top, #envelope-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    background-image: url(/imagenes/assets/PORTADA-1.svg);
+    box-shadow: 0 0 10px rgb(223, 215, 215);
+}
+/* Sello del sobre */
+#seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: #aa5c61;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 1s ease-in-out;
+    z-index: 11;
+    
+}
+#seal h2 {
+    margin: 0;
+    animation: shine 4s linear infinite;
+    font-weight: 400;
+    font-family: var(--font-1);
+    font-size: 30px;
+    color: #e5c7c9;
+  margin-bottom: 0;
+}
+#invitacion {
+    display: none;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.portada {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+ }
+.portada {
+    width: 100%;
+}
+.portada img{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+ /* Texto principal */
+ .portada h1 {
+    font-family: var(--font-1);
+    font-size: 61px;
+    font-weight: 500;
+    padding: 10px;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    margin-bottom: 0;
+    margin-top: -220px;
+}
+.portada p{
+    margin: 0;
+    font-size: 22px;
+    padding: 5px;
+    color: var(--color-2);
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.flor img{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+  @keyframes flash {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.8); }
+  }
+/* Animación de brillo */
+@keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+/* Sección Countdown */
+.section-countdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    z-index: 1;
+}
+/* Títulos y textos */
+.section-countdown h1 {
+    font-size: 46px;
+    margin: 0;
+    font-family: var(--font-1);
+    font-weight: 400;
+    font-style: italic;
+    animation: shine 1.5s infinite linear;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+}
+.section-countdown p {
+    margin: 0;
+    font-size: 22px;
+    padding: 15px;
+    color: #aa5c61;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+}
+.section-countdown h2 {
+    font-size: 30px;
+    margin: 0;
+    padding: 15px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+}
+  @keyframes flash {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.8); }
+  }
+      @keyframes flash {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.8); }
+      }
+      
+/* Contenedor del contador */
+#contador {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+    flex-wrap: wrap; /* responsive */
+}
+/* Círculos del contador */
+.countdown-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #aa5c617a;
+}
+.countdown-circle span {
+    font-size: 1em;
+    padding: 0;
+    font-family: var(--font-2);
+    color:#aa5c61;
+}
+/* Botón calendario */
+.section-calendar {
+    padding: 10px;
+    width: 100%; /* ocupa todo el ancho */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* centrado horizontal */
+    align-items: center;     /* centrado vertical */
+}
+.section-calendar a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+    color: #aa5c61;
+    background: #fff; /* fondo blanco para botón */
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: shine 1.5s infinite linear;
+}
+.section-calendar a:hover {
+    background-color: #aa5c61;
+    color: #fff;
+}
+/* Música integrada */
+.section-music {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0); /* bloque ligero, puedes quitarlo si quieres full transparente */
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.section-music h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-style: var(--font-2);
+}
+.section-music audio {
+    width: 100%;
+    max-width: 300px;
+}
+audio {
+    position: relative;
+    z-index: 10; /* asegúrate que sea mayor que los demás elementos */
+  }
+  .capa-superior {
+    pointer-events: none; /* para que no bloquee los clics */
+  }
+  
+.bloque-con-bola {
+    position: relative;
+  }
+  
+  .foto-con-bola img,
+  .section-blessings {
+    display: block;
+    width: 100%;
+  }
+  
+  .bola-disco {
+    position: absolute;
+    top: 32%;       /* mitad del bloque (entre las dos secciones) */
+    left: 50%;
+    transform: translate(-50%, -50%); /* centrado perfecto */
+    width: 422px;   /* ajusta el tamaño a tu gusto */
+    z-index: 5;     /* arriba de todo */
+    animation: flash 2s infinite linear;
+  }
+.section-blessings {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* altura adaptable, puedes cambiar a 100vh si quieres full pantalla */
+    background: url("imagenes/bendicionpapas.svg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: -1;
+    margin-top: -100px;
+}
+/* Texto */
+.section-blessings h1 {
+    font-size: 30px;
+    color: #aa5c61;
+    font-family: var(--font-2);
+    font-weight: 400;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-style: italic;
+    margin-top: 230px;
+}
+.section-blessings h2 {
+    font-size: 38px;
+    font-family: var(--font-1);
+    font-weight: 400;
+    color: #aa5c61;
+    -webkit-text-fill-color: transparent;
+    margin-top: -20px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+/* Pseudo-elemento para el destello */
+.section-blessings h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+/* Animación del destello */
+@keyframes shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+.section-invitados {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    z-index: -1;
+}
+.section-invitados h1 {
+    font-size: 30px;
+    font-family: var(--font-2);
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: italic;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+}
+.section-invitados h2 {
+    font-size: 40px;
+    font-family: var(--font-1);
+    font-weight: 400;
+    margin: 10px 0;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: -20px;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+}
+.section-invitados h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+.section-invitados p, 
+.section-invitados h3 {
+    margin: 0;
+    font-size: 21px;
+    padding: 5px;
+    color: #aa5c61;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+}
+.bola-disco-lateral {
+    position: absolute;
+    top: -3%;         /* a la mitad de la sección */
+    right: -79px;     /* que sobresalga un poco fuera del borde derecho */
+    transform: translateY(-50%);
+    width: 180px;     /* tamaño ajustable */
+    z-index: 3;
+    animation: flash 2s infinite linear;
+    pointer-events: none; /* para que no bloquee clics */
+  }
+  .section-invitados {
+    position: relative; /* necesario para que la bola se posicione respecto a esta sección */
+    text-align: center;
+  }
+    /* Imagen bolas disco */
+.section-confirmacion {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    z-index: 1;
+}
+/* Título principal */
+.section-confirmacion h1, .itinerary-card h2 {
+    font-size: 40px;
+    font-family: var(--font-1);
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+/* Texto descriptivo */
+.section-confirmacion p, .itinerary-card p, .section-dresscode p, .section-gifts p, .section-playlist p, .qr-container p  {
+    font-size: 22px;
+    color: #aa5c61;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-style: italic;
+    margin-top: -20px;
+    margin-bottom: 4px;
+    padding: 10px;
+}
+/* Sección itinerario (CLASE: lleva punto) */
+.section-itinerario {
+    position: relative; /* clave para posicionar hijos absolute */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  /* Tarjetas */
+  .itinerary-card {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+  .itinerary-card:hover { transform: scale(1.03); }
+  /* Fecha y hora */
+  .time-location {
+    font-size: 22px;
+    color: #aa5c61;
+    font-family: var(--font-2);
+    font-weight: 400;
+    margin-top: -15px;
+    margin-bottom: 0;
+    font-style: normal;
+  }
+  /* Animación opcional, si no la tienes */
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.7; }
+  }
+/* Botón de direcciones */
+/* Sección Regalos */
+.section-gifts {
+    position: relative; /* clave para posicionar .bola-disco5 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* Animación si no la tenés aún */
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.75; }
+  }
+.section-dresscode {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* importante para posicionar la bola dentro */
+}
+/* Título */
+.section-dresscode h2, .section-playlist h2, .section-gifts h2{
+    font-size: 40px;
+    font-family: var(--font-1);
+    margin: 20px 0 10px 0;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+    font-weight: 400;
+    padding: 10px;
+}
+.section-playlist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* importante para posicionar la bola dentro */
+}
+/* Bola disco – esquina superior izquierda por defecto */
+.bola-disco6 {
+    position: absolute;
+    top: -76px;
+    right: -133px;
+    width: 260px;
+    z-index: 5;
+    pointer-events: none;
+    animation: flash 2s 
+linear infinite;
+  }
+  /* Bola disco – esquina superior izquierda por defecto */
+.bola-disco7 {
+    position: absolute;
+    top: 500px;
+    right: -73px;
+    width: 520px;
+    z-index: 5;
+    pointer-events: none;
+    animation: flash 2s linear infinite;
+  }
+  .bola-disco8 {
+    position: absolute;
+    top: 609px;
+    right: -116px;
+    width: 230px;
+    z-index: 2;
+    pointer-events: none;
+    animation: flash 2s linear infinite;
+  }
+.section-galeria {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+/* Título */
+.section-galeria h2 {
+    font-size: 45px;
+    font-family: var(--font-1);
+    margin-bottom: 30px;
+    font-weight: 400;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+    -webkit-text-fill-color: transparent;
+    margin-top: 100px;
+}
+.section-album {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section-album h2{
+    font-size: 40px;
+    font-family: var(--font-1);
+    margin: 20px 0 10px 0;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+    font-weight: 400;
+    padding: 10px;
+}
+/* Hashtag */
+.section-album .hashtag {
+    font-size: 38px;
+    font-family: var(--font-1);
+    margin-bottom: 30px;
+    color: #aa5c61;
+    padding: 10px;
+    margin-top: -30px;
+}
+/* Contenedor QR */
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: -20px;
+}
+.section-wishes {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+.section-wishes h2 {
+    font-size: 45px;
+    font-family: var(--font-1);
+    margin: 20px 0;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+    padding: 10px;
+    font-weight: 400;
+}
+#wish-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    width: 80%;
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin: 20px auto;
+}
+#wish-form input,
+#wish-form textarea {
+    width: 90%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-size: 16px;
+    background: #f9f9f9;
+    resize: none;
+}
+#wishes-container {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    width: 80%;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: left;
+    margin-bottom: 30px;
+}
+#wishes-container p {
+    font-family: var(--font-2);
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #aa5c61;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+.section-quote {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Para posicionar .bola-disco9 */
+    margin-top: -20px;
+}
+.section-quote h1 {
+    font-size: 25px;
+    padding: 20px;
+    font-family: var(--font-2);
+    font-weight: 500;
+    background: linear-gradient(  120deg, #efc9c8 0%, #d5908f 35%,  #c77476 70%, #aa5c61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  margin-bottom: 0;
+}
+footer {
+    background-color: #aa5c61;
+    background-size: cover;
+    width: 100%;
+    box-sizing: border-box;
+}
+.section-social-icons {
+    padding: 20px;
+}
+.section-social-icons a {
+    color: #efc9c8;
+    margin: 0 10px;
+    text-decoration:none;
+}
+.section-social-icons i{
+    font-size: 35px;
+}
+.section-logo img{
+    margin-top: 0px;
+}
+/* Media Queries */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* iPad Styles */
+    .seal{
+        width: 200px;
+        height: 200px;
+        }
+        .sealh h2{
+            font-size: 60px;
+        }
+        .sintillo{
+            height: 500px;
+            margin-bottom: -80px;
+        }
+        .sintillo h1{
+            font-size: 120px;
+            margin-top: 10px;
+        }
+        .sintillo h2{
+            font-size: 150px;
+            margin-top: 280px;
+        }
+        .section-0, .section-1, .section-2, .section-3, .section-4{
+            height: 800px;
+        }
+        .section-countdown p, .section-countdown h2, .section p, .section-gifts p, .section-filter p{
+            margin: 0;
+            font-size: 50px;
+            padding: 15px;
+        }
+        .section-countdown h1{
+            font-size: 140px;
+        }
+        .section-music{
+            margin-top: -90px;
+            height: 500px;
+        }
+        .section-music h2{
+            font-size: 50px;
+        }
+        .countdown-circle{
+            height: 180px;
+            width: 180px;
+        }
+        .countdown-circle span{
+            font-size: 40px;
+        }
+        .section-calendar{
+            padding: 20px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 50%;
+        }
+        .section-calendar a {
+            font-size: 40px;
+        }
+        .section h2, .section-gifts h2, .section h3, .section-filter h2, .section-quote h1{
+            font-size: 70px;
+        }
+        .section span{
+            font-size: 60px;
+        }
+
+        .galeria img{
+            height: 300px;
+            width: 300px;
+        }
+        .section-social-icons i{
+            font-size: 55px;
+            margin-top: 50px;
+        }
+        .section-logo img{
+            margin-top: 0px;
+        }
+}
+@media (min-width: 1025px) {
+    /* Laptop Styles */
+    .seal {
+        width: 200px;
+        height: 200px;
+    }
+    .seal h2 {
+        font-size: 60px;
+    }
+    .sintillo {
+        height: 500px;
+        margin-bottom: -80px;
+    }
+    .sintillo h1 {
+        font-size: 120px;
+        margin-top: 10px;
+    }
+    .sintillo h2 {
+        font-size: 150px;
+        margin-top: 280px;
+    }
+    .section-0, .section-1, .section-2, .section-3, .section-4 {
+        height: 600px;
+        width: 100%; /* Asegurarse de que ocupe todo el ancho */
+        display: flex;
+        justify-content: center; /* Centrando horizontalmente */
+        align-items: center; /* Centrando verticalmente */
+    }
+    .section-countdown p, .section-countdown h2, .section p, .section-gifts p, .section-filter p {
+        margin: 0;
+        font-size: 50px;
+        padding: 15px;
+    }
+    .section-countdown h1 {
+        font-size: 140px;
+    }
+    .section-music {
+        margin-top: -90px;
+        height: 500px;
+        width: 100%; /* Asegurarse de que ocupe todo el ancho */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-music h2 {
+        font-size: 50px;
+    }
+    .countdown-circle {
+        height: 180px;
+        width: 180px;
+    }
+    .countdown-circle span {
+        font-size: 40px;
+    }
+    .section-calendar {
+        padding: 20px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 50%;
+    }
+    .section-calendar a {
+        font-size: 40px;
+    }
+    .section h2, .section-gifts h2, .section h3, .section-filter h2, .section-quote h1 {
+        font-size: 80px;
+    }
+    .section span {
+        font-size: 60px;
+    }
+    .galeria img {
+        height: 300px;
+        width: 300px;
+    }
+    .section-social-icons i {
+        font-size: 55px;
+        margin-top: 50px;
+    }
+    .section-logo img {
+        margin-top: 0px;
+    }
+}
+  /* --- RESET para que <a> y <button> partan iguales --- */
+button, .btn {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    line-height: 1; /* evita alturas raras */
+  }
+  
+  /* --- BOTÓN ÚNICO --- */
+  .btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 10px;
+    background: #aa5c61;
+    color: #efc9c8;
+    letter-spacing: 0.5px;
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    box-shadow: none;            /* sin sombras */
+    border: none;                /* sin bordes */
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Hover / Active / Focus accesibles y elegantes */
+  .btn:hover { 
+    transform: translateY(-1px); 
+    filter: brightness(1.03);
+  }
+  .btn:active { 
+    transform: translateY(0); 
+    filter: brightness(.98);
+  }
+  .btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+  
+  /* Tamaños opcionales (si los quieres) */
+  .btn--sm { padding: 10px 22px; font-size: 16px; }
+  .btn--lg { padding: 16px 40px; font-size: 20px; }
+  
+  /* Ancho completo opcional */
+  .btn--block { display: block; width: 100%; }
+  
+  /* En pantallas grandes, si deseas subir tamaño de TODOS de una vez */
+  @media (min-width: 1025px) {
+    .btn { font-size: 20px; }
+  }
+  /* Imagen bolas disco */
+  .bola-disco-5 {
+    position: absolute;
+    top: -5px;
+    right: -66%;
+    transform: translateX(-50%);
+    width: 230px;
+    animation: flash 2s linear infinite;
+    z-index: 2;
+}
+.bola-disco-6 {
+    position: absolute;
+    top: -31px;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 172px;
+    animation: flash 2s linear infinite;
+    z-index: 2;
+}
+.bola-disco-7 {
+    position: absolute;
+    top: -31px;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 172px;
+    animation: flash 2s linear infinite;
+    z-index: 2;
+}
+
+.bola-disco-9 {
+    position: absolute;
+    top: -33px;
+    left: -8%;
+    transform: translateX(-50%);
+    width: 267px;
+    animation: flash 2s linear infinite;
+    z-index: 2;
+}
+.overlay, .fondo-decorativo, .envoltura {
+    pointer-events: none;
+  }
+  
+
+
+  @media (min-width: 1025px) {
+    .portada h1 {
+      font-size: 150px;
+      margin-top: 220px;
+    }
+    .section-countdown, .section-music{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-countdown{
+        margin-bottom: 50px;
+    }
+    .section-countdown h1 {
+      font-size: 120px;
+    }
+    .section-countdown h2 {
+      font-size: 60px;
+    }
+    .section-countdown p {
+      font-size: 60px;
+    }
+    .countdown-circle {
+      width: 180px;
+      height: 180px;
+    }
+    .countdown-circle span {
+      font-size: 42px;
+    }
+    .section-calendar a {
+      font-size: 35px;
+      padding: 12px 30px;
+    }
+    .section-music h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    .section-music{
+        margin-bottom: 0;
+        margin-top: -200px;
+    }
+    .section-invitados{
+        margin-top: -150px;
+    }
+    .section-invitados h1 {
+      font-size: 60px;
+    }
+    .section-invitados h2 {
+      font-size: 90px;
+    }
+    .section-invitados p {
+      font-size: 60px;
+    }
+    .itinerary-card h2, .section-confirmacion h1, .section-dresscode h2, .section-playlist h2, .section-gifts h2, .section-album h2, .section-wishes h2{
+        font-size: 80px;
+    }
+    .section-quote h1{
+        font-size: 40px;
+    }
+    .section-confirmacion p, .itinerary-card p, .section-dresscode p, .section-gifts p, .section-playlist p, .qr-container p, .time-location{
+        font-size: 40px;
+    }
+    .icon lord-icon{
+        width: 400px;
+    }
+    .btn {
+      font-size: 40px;
+    }
+    /* Ajuste de bolas disco */
+    .bolas-disco {
+        position: absolute;
+        top: -130px;
+        left: 50%;
+        width: 800px;
+    }
+    .bola-disco-1 {
+      top: -120px;
+      right: -105%;
+      width: 550px;
+    }
+    .bola-disco-2 {
+      top: 310px;
+      left: -35%;
+      width: 450px;
+    }
+    .bola-disco3 {
+      top: 0;
+      right: 85%;
+      width: 550px;
+    }
+    .bola-disco-5,
+    .bola-disco-6,
+    .bola-disco-7,
+    .bola-disco-9 {
+      width: 650px;
+    }
+    .bola-disco-5{
+        right: -125%;
+        top: -220px;
+    }
+    .bola-disco-6{
+        left: -55%;
+    }
+    .bola-disco6{
+        right: -75%;
+        width: 550px;
+        top: -70px;
+    }
+    .bola-disco-7{
+        left: -55%;
+    }
+    .bola-disco-9{
+        left: -55%;
+    }
+  }
+  
