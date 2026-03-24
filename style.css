@@ -61,8 +61,8 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 160px;
-    height: 160px;
+    width: 209px;
+    height: 209px;
     background: #aa5c61;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
     border-radius: 50%;
@@ -79,7 +79,7 @@ html, body {
     animation: shine 4s linear infinite;
     font-weight: 400;
     font-family: var(--font-1);
-    font-size: 30px;
+    font-size: 35px;
     color: #e5c7c9;
   margin-bottom: 0;
 }
