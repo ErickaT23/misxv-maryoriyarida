@@ -76,7 +76,7 @@ function confirmarAsistencia() {
   const id = parseInt(params.get("id"), 10);
 
   const numeroTelefono = "50251645914";
-  let mensaje = "Hola, deseo confirmar mi asistencia al fabuloso cumpleaños de Maryori.";
+  let mensaje = "Hola, quiero confirmar mi asistencia a los Quince de Maryori. Somos __ y asistiremos __ personas. ¡Gracias por invitarnos!";
 
   if (window.invitados && Array.isArray(window.invitados)) {
     const invitado = window.invitados.find(inv => inv.id === id);
